@@ -3,24 +3,31 @@
 # Imprima a tabuada da operação escolhida. Repita até que a 
 # opção saída seja escolhida.
 
-# menu = "a = adição, s = subtração, d = divisão, m = multiplicação e s = sair"
 # print(menu)
-tabuada = input("Digite sua escolha: ") 
+menu = ''
+print(menu)
+while menu != 's':
+    menu = input("+ = adição, - = subtração, / = divisão, * = multiplicação e s = sair: ")
+    if menu == 's':
+        break
 
-numero = 1
-while opcao != 's':
-    tabuada = int(input("Tabuada: "))
-    if tabuada <= 10:
-        numero +=1
-        print("%d x %d = %d" % (tabuada, numero, tabuada * numero))
-    
-    if numero == 11:
-        numero = 1
-    tabuada +=1
+    x = 1
+    n = int(input("Tabuada de: "))
+    while x <= 10:
+        if menu == '+':
+            resultado = n+x
+            print("%d + %d = %d" %(n, x, resultado))
 
+        elif menu == '-':
+            resultado = n-x
+            print("%d - %d = %d" %(n, x, resultado))
 
-# tabuada = 1
+        elif menu == '/':
+            resultado = n/x
+            print("%d / %d = %d" %(n, x, resultado))
 
-# while tabuada <= 10:
-#     numero = 1
-#     while
+        elif menu == '*':
+            resultado = n*x
+            print("%d x %d = %d" %(n, x, resultado))
+
+        x=x+1
